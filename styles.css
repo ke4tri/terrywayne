@@ -252,7 +252,9 @@ p {
 }
 
 .button.secondary {
-  color: var(--accent-dark);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.92);
+  color: var(--dark);
 }
 
 .button:hover {
@@ -291,61 +293,42 @@ p {
   --section-photo: url("images/DSCF0052.jpg");
 }
 
-.section-muted {
-  background:
-    linear-gradient(rgba(237, 242, 238, 0.92), rgba(237, 242, 238, 0.92)),
-    url("images/DSCF0096.jpg") center / cover;
+.selected-songs {
+  background: var(--bg);
 }
 
-.card-grid {
+.video-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
   margin-top: 32px;
 }
 
-.card {
-  min-height: 190px;
-  padding: 24px;
-  background: var(--panel);
+.video-card {
+  min-width: 0;
+}
+
+.video-frame {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--dark);
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
-.image-card {
-  min-height: 230px;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(13, 15, 16, 0.08), rgba(13, 15, 16, 0.82)),
-    var(--card-image) center / cover;
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-.image-card h3,
-.image-card p {
-  position: relative;
-  color: white;
+.video-card h3 {
+  margin-top: 18px;
 }
 
-.image-card p {
-  margin-bottom: 0;
-  color: rgba(255, 255, 255, 0.84);
-}
-
-.image-card-lyrics {
-  --card-image: url("images/DSCF0304.jpg");
-}
-
-.image-card-melody {
-  --card-image: url("images/DSCF0359.JPG");
-}
-
-.image-card-collaboration {
-  --card-image: url("images/DSCF0288.JPG");
+.video-card p {
+  max-width: 560px;
 }
 
 .section-dark {
@@ -464,7 +447,7 @@ p {
     gap: 18px;
   }
 
-  .card-grid {
+  .video-grid {
     grid-template-columns: 1fr;
   }
 
